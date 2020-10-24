@@ -15,11 +15,7 @@ for biezaca in liczby:
     if biezaca < najmniejsza:
         najmniejsza = biezaca
 
-
 print( f"Najmniejsza liczba to: {najmniejsza}" )
-
-
-
 
 # znaleźć najdłuższe słowo:
 # slowa = [ 'kot', 'zolw', 'zyrafa', 'pies', 'jaskolka' ]
