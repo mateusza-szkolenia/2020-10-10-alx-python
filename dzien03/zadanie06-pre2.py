@@ -8,14 +8,10 @@ poz_najmniejsza = None
 poz_najwieksza = None
 
 for p, biezaca in enumerate( liczby ):
-    if najmniejsza == None:
-        najmniejsza = biezaca
-    if biezaca < najmniejsza:
+    if najmniejsza == None or biezaca < najmniejsza:
         najmniejsza = biezaca
         poz_najmniejsza = p
-    if najwieksza == None:
-        najwieksza = biezaca
-    if biezaca > najwieksza:
+    if najwieksza == None or biezaca > najwieksza:
         najwieksza = biezaca
         poz_najwieksza = p
 
