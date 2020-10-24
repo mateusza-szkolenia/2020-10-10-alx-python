@@ -13,9 +13,6 @@ for p in range( len(liczby) ):
 print(f"pmin={pmin} ==> {liczby[pmin]}")
 print(f"pmax={pmax} ==> {liczby[pmax]}")
 
-liczby[pmax] = liczby[pmin]
-liczby[pmin] = liczby[pmax]
-
-# DZIALA ZLE, BO GUBIMY JEDNA WARTOSC!!!
+liczby[pmax], liczby[pmin] = liczby[pmin], liczby[pmax]
 
 print(f"Po: {liczby}")
