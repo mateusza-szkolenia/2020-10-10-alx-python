@@ -7,7 +7,7 @@ zb2 = set()
 
 for i in range( 1000 ):
     if i < 100:
-        continue
+        continue # skoncz przetwarzanie biezacego elementu i przejdz natychmiast do nastepnego
     if (i**13) % 7 == 2:
         continue
     if ( i % 3 ) == 1:
