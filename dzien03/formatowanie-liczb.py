@@ -6,7 +6,7 @@ print( f"x={x:10}#" )    # wyrownaj do prawej do 10 cyfr
 print( f"x={x:2}#" )     # wyrownaj do prawej do 2 cyfr, ale nie zadziala, bo liczba ma 3 cyfry
 print( f"x={x:<10}#")    # wyrownaj do lewej do 10 cyfr
 
-# Metoda używająca składni printf() z języka C
+# Metoda używająca składni printf() z języka C oraz operatora %
 print("Metoda uzywajaca %d:")
 print( "x=%d" % (x) )
 print( "x=%10d" % (x) )
