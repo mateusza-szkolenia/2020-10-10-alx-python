@@ -1,6 +1,8 @@
 zarobki = [ 4000, 6000, 3000, 9000, 20000, 7500 ]
 
-# wprowadzamy stawke podatku 15% oraz kwote wolna od podatku <= 4200
+# wprowadzamy stawki:
+# 15% dla zarabiajacych >= 4500
+# 5% dla pozostalych
 
 podatek = 0
 
