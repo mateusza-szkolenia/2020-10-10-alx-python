@@ -9,8 +9,6 @@ print()
 
 for wiersz in range( 1, zakres + 1 ):
     print(f"{wiersz:{szer}}: ", end="")
-
     for kolumna in range( 1, zakres + 1 ):
         print(f"{wiersz*kolumna:{szer}} ", end="")
-
     print()
