@@ -7,6 +7,9 @@ podatek = 0
 # POPRAWIC
 
 for z in zarobki:
-    podatek += z * 0.1
+    if z <= 4200:
+        pass
+    else:
+        podatek += z * 0.15
 
 print(f"Calkowity zebrany podatek: {podatek}")
