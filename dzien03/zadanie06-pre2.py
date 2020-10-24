@@ -1,22 +1,26 @@
 # Mając daną listę liczb, znaleźć najmniejszą i największą z nich
 
-liczby = [ 3, 100, 50, 20, 17, 60, 2, 70, 80, 111, 50, 13 ]
+liczby = [ 100, 101, 200, 80, 10, 60 ]
 
 najmniejsza = None
 najwieksza = None
+poz_najmniejsza = None
+poz_najwieksza = None
 
-for biezaca in liczby:
+for p, biezaca in enumerate( liczby ):
     if najmniejsza == None:
         najmniejsza = biezaca
     if biezaca < najmniejsza:
         najmniejsza = biezaca
+        poz_najmniejsza = p
     if najwieksza == None:
         najwieksza = biezaca
     if biezaca > najwieksza:
         najwieksza = biezaca
+        poz_najwieksza = p
 
-print( f"Najmniejsza liczba to: {najmniejsza}" )
-print( f"Najwieksza liczba to: {najwieksza}" )
+print( f"Najmniejsza liczba to: {najmniejsza} (poz: {poz_najmniejsza})" )
+print( f"Najwieksza liczba to: {najwieksza} (poz: {poz_najwieksza})" )
 
 for biezaca in liczby:
     print(f"{biezaca}: ", end="")
