@@ -20,8 +20,8 @@ Przykład:
 
 W tabliczce mnożenia zastąpić wartości:
 
-* 0-5   - znakiem "."
-* 6-10  - znakiem "o"
-* 11-15 - znakiem "O"
-* 16-20 - znakiem "0"
-* 21-.. - znakiem "@"
+* 0-5   - znakiem `.`
+* 6-10  - znakiem `o`
+* 11-15 - znakiem `O`
+* 16-20 - znakiem `0`
+* 21-.. - znakiem `@`
