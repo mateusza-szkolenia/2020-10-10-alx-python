@@ -17,3 +17,11 @@ for biezaca in liczby:
 
 print( f"Najmniejsza liczba to: {najmniejsza}" )
 print( f"Najwieksza liczba to: {najwieksza}" )
+
+for biezaca in liczby:
+    print(f"{biezaca}: ", end="")
+    if biezaca == najmniejsza:
+        print("MIN ", end="")
+    if biezaca == najwieksza:
+        print("MAX ", end="")
+    print()
