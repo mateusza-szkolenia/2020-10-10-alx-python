@@ -1,6 +1,6 @@
 # Mając daną listę liczb, znaleźć najmniejszą i największą z nich
 
-liczby = [ 100, 101, 200, 80, 10, 60 ]
+liczby = [ 999, 100, 101, 200, 80, 10, 60 ]
 
 najmniejsza = None
 najwieksza = None
