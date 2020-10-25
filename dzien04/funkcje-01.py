@@ -1,3 +1,6 @@
+# uzyc tej funkcji w glownym kodzie programu (2 petle)
+# oraz oczyscic funkcje z niepotrzebnych komunikatow
+
 def przelicz_temp_C( tC ):
     print("Dzien dobry")
     tF = 1.8 * tC + 32
