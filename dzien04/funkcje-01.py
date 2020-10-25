@@ -1,5 +1,7 @@
-# uzyc tej funkcji w glownym kodzie programu
-# oraz oczyscic funkcje z niepotrzebnych komunikatow
+# 1. przerobic funkcje przelicz_temp_C, aby uzywala funkcji przelicz_C_na_F
+# 2. dopisac funkcje przelicz_C_na_K
+# 3. przerobic funkcje przelicz_temp_C, aby wyswietla zarowno °C, °F i K
+# 4. w glownym programie napisac przy kazdej tempraturze czy jest cieplo czy zimno (prog 60°F)
 
 def przelicz_temp_C( tC ):
     tF = 1.8 * tC + 32
@@ -18,5 +20,5 @@ pomiary = [ 12, 13, 15, 13, 10, 9, 6, 10, -1, -2, 4 ]
 
 for tempC in pomiary:
     tempF = przelicz_C_na_F( tempC )
-    print(f"{tempC}°C ===> {tempF}°F")
+    print(f"{tempC}°C ===> {tempF}°F   XXXXX")
 
