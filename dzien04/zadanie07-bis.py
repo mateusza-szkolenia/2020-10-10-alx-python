@@ -3,10 +3,7 @@ napis = "ala ma kota, ola ma psa, robert ma żółwia, a ula ma chomika"
 samogloski = "aeiouyó"
 
 for s in samogloski:
-    ile_razy = 0
-    for l in napis:
-        if l == s:
-            ile_razy += 1
+    ile_razy = len( [ 1 for l in napis if l == s ] )
     print(f"{s} = {ile_razy}")
 
 
