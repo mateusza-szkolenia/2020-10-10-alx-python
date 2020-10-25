@@ -32,11 +32,15 @@ uczniowie = [
 
 Zakład w systemie lotto to 6 różnych liczb z przedziału od **1** do **49** włącznie.
 
-Wygenerować listę 100000 losowych zakładów i policzyć ile było zwycięskich trafień:
+Wygenerować losowo:
+- listę 100000 zakładów
+- zwycięską kombinację
+
+Policzyć ile było zwycięskich trafień:
 - szóstek
 - piątek
 - czwórek
 - trójek
 
-Czy wyniki symulacji zgadzają się z prawdopodobieństwem zwycięstwa podanym na [Wikipedii](https://pl.wikipedia.org/wiki/Lotto_(gra_liczbowa)#Prawdopodobie%C5%84stwo_trafienia_dok%C5%82adnie_k_liczb)?
+Porównać, czy wyniki symulacji zgadzają się z prawdopodobieństwem zwycięstwa podanym na [Wikipedii](https://pl.wikipedia.org/wiki/Lotto_(gra_liczbowa)#Prawdopodobie%C5%84stwo_trafienia_dok%C5%82adnie_k_liczb)?
 
