@@ -1,5 +1,3 @@
-import sys
-
 oferta = [
     { "nazwa" : "ziemniaki", "cena" : 2.0 },
     { "nazwa" : "migdaly", "cena" : 40.00 },
@@ -21,9 +19,7 @@ wybor = input("Co chcesz kupic? ")
 
 # sprawdzenie, czy w ogole taki produkt jest w sklepie
 
-if len( [ None for p in oferta if p['nazwa'] == wybor ] ) == 0:
-    print("Brak produktu w sklepie")
-    sys.exit()
+assert len( [ None for p in oferta if p['nazwa'] == wybor ] ) > 0, "Brak produktu w sklepie"
 
 # pytamy "Ile kg?"
 waga = float( input("Ile kg? ") )
