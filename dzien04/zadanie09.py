@@ -32,5 +32,8 @@ waga = float( input("Ile kg? ") )
 
 cena = [ p for p in oferta if p['nazwa'] == wybor ][0]["cena"]
 
+# alternatywne podejscie, daje ten sam wynik
+# cena = [ p['cena'] for p in oferta if p['nazwa'] == wybor ][0]
+
 wartosc = waga * cena
 print(f"Do zaplaty: {wartosc}")
