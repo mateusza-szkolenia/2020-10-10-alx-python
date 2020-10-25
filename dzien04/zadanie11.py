@@ -11,7 +11,11 @@ print(f"Liczba liczb: {len(liczby)} ")
 bez_powt = set( liczby )
 print(f"Liczby unikalne: {bez_powt}")
 
-bez_powt = list(set( liczby ))
-print(f"Liczby unikalne: {bez_powt}")
+bez_powt2 = list(set( liczby ))
+print(f"Liczby unikalne: {bez_powt2}")
 
+liczby_parzyste = set( range(0, 100+1, 2) )
+liczbyx = liczby_parzyste & bez_powt
+
+print(f"Liczby X: {liczbyx}")
 
