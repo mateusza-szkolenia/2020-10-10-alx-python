@@ -1,6 +1,6 @@
 napis = "ala ma kota, ola ma psa, robert ma żółwia, a ula ma chomika"
 
-samogloski = [ "a", "e", "o", "i", "u", "y", "ó" ]
+samogloski = "aeiouyó"
 
 ile_samoglosek = 0
 
