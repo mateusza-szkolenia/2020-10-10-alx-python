@@ -1,6 +1,6 @@
 oferta = [
-    { "produkt" : "ziemniaki", "cena" : 2.0 },
-    { "produkt" : "migdaly", "cena" : 40.00 }
+    { "nazwa" : "ziemniaki", "cena" : 2.0 },
+    { "nazwa" : "migdaly", "cena" : 40.00 }
 ]
 
 # TUTAJ MA SIE WYPISAC OFERTA SKLEPU
