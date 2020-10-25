@@ -21,9 +21,16 @@ waga = float( input("Ile kg? ") )
 
 # podajemy cene
 
-for p in oferta:
-    if p['nazwa'] == wybor:
-        cena = p['cena']
+# filtrujemy liste w poszukiwaniu produktu o wybranej nazwie
+#print( [ p for p in oferta if p['nazwa'] == wybor ] )
+
+# wyciagamy pierwszy z nich (numer 0)
+#print( [ p for p in oferta if p['nazwa'] == wybor ][0] )
+
+# wyciagamy pierwszy z nich (numer 0) a nastepnie jego pole "cena"
+# print( [ p for p in oferta if p['nazwa'] == wybor ][0]["cena"] )
+
+cena = [ p for p in oferta if p['nazwa'] == wybor ][0]["cena"]
 
 wartosc = waga * cena
 print(f"Do zaplaty: {wartosc}")
