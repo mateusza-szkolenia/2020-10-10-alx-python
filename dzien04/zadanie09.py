@@ -8,8 +8,22 @@ oferta = [
 ]
 
 # TUTAJ MA SIE WYPISAC OFERTA SKLEPU
+print("###### Oferta: ######")
+for produkt in oferta:
+    print(f"{produkt['nazwa']:10}: {produkt['cena']:5}")
+print()
 
 # pytamy "Co chcesz kupic? "
+wybor = input("Co chcesz kupic? ")
+
 # pytamy "Ile kg?"
+waga = float( input("Ile kg? ") )
 
 # podajemy cene
+
+for p in oferta:
+    if p['nazwa'] == wybor:
+        cena = p['cena']
+
+wartosc = waga * cena
+print(f"Do zaplaty: {wartosc}")
