@@ -6,6 +6,11 @@
 def pole_prostokata( a, b ):
     return a * b
 
+def obw_prostokata( a, b ):
+    return a + a + b + b
+#   return 2 * a + 2 * b
+#   return 2 * ( a + b )
+
 prostokaty = [
     ( 100, 20 ),
     ( 300, 30 ),
@@ -14,4 +19,5 @@ prostokaty = [
 
 for p in prostokaty:
     pole = pole_prostokata( p[0], p[1] )
-    print(f"Pole prostokata o wymiarach: {p} wynosi {pole}")
+    obw = obw_prostokata( p[0], p[1] )
+    print(f"Pole prostokata o wymiarach: {p} wynosi {pole} a obw {obw}")
