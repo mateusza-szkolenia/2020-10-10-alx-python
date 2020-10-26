@@ -105,5 +105,12 @@ Zasymulować 100000 rzutów 3 kośćmi 6-ściennymi i analogicznie przedstawić 
     18: X ..
 ```
 
-Napisać funkcję `symuluj( a, b, c )`, która symuluje `a` rzutów wykonanych za pomocą `b` kości o `c` ścianach każda i rysuje wykres.
- 
+Napisać funkcję `symuluj_rzuty( a, b, c )`, która symuluje `a` rzutów wykonanych za pomocą `b` kości o `c` ścianach każda i rysuje wykres.
+
+
+# Wyrażenia listowe itp
+
+## Stawki VAT
+
+Napisać wyrażenie konwertujące listę stawek VAT ze stringa postaci `A=23 B=8 C=0` na słownik postaci: `{ "A" : 23.0, "B" : 8.0, "C" : 0.0 }`
+
