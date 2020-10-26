@@ -4,16 +4,38 @@ Poniższe zadania należy wykonać używając poniższej bazy uczniów:
 
 ```
 uczniowie = [
-    { "imie" : "Piotr", "nazwisko" : "ABC", "oceny" : [3, 6, 5, 6, 4, 3, 6, 4] },
-    { "imie" : "Basia", "nazwisko" : "Tralala", "oceny" : [5, 5, 5, 6, 5, 6, 6, 6] },
-    { "imie" : "Kasia", "nazwisko" : "Trututu", "oceny" : [1, 2, 5, 5, 2, 4, 5, 3] },
-    { "imie" : "Jan", "nazwisko" : "Mimi", "oceny" : [3, 3, 3, 3, 5, 5, 4, 6] },
-    { "imie" : "Zygmunt", "nazwisko" : "Gagaga", "oceny" : [3, 4, 4, 5, 4, 4, 3, 5] },
-    { "imie" : "Andrzej", "nazwisko" : "Lolo", "oceny" : [2, 3, 5, 5, 5, 3, 4, 4] },
-    { "imie" : "Piotr", "nazwisko" : "Rororo", "oceny" : [5, 6, 5, 5, 5, 6, 6, 6] },
-    { "imie" : "Piotr", "nazwisko" : "Dudu", "oceny" : [4, 1, 1, 3, 1, 6, 1, 1] }
+  {"imie":"Tadeusz","nazwisko":"V.","oceny":"1 4 4 1 2 2 4 1 3 3 2 1"},
+  {"imie":"Karol","nazwisko":"F.","oceny":"4 3 6 2 5 2 4 5 4 6 5 3"},
+  {"imie":"Tadeusz","nazwisko":"P.","oceny":"2 1 2 2 4 3 2 1 3 2 4 4"},
+  {"imie":"Mateusz","nazwisko":"O.","oceny":"5 5 4 3 2 4 3 3 3 2 5 4"},
+  {"imie":"Tadeusz","nazwisko":"E.","oceny":"4 4 2 5 6 5 2 2 3 5 3 6"},
+  {"imie":"Małgorzata","nazwisko":"N.","oceny":"4 5 2 1 1 3 6 3 4 5 2 5"},
+  {"imie":"Ilona","nazwisko":"L.","oceny":"4 4 5 5 6 6 2 5 1 6 1 2"},
+  {"imie":"Borys","nazwisko":"J.","oceny":"5 5 5 5 3 5 3 4 4 5 3 4"},
+  {"imie":"Wiktoria","nazwisko":"Q.","oceny":"4 5 3 4 6 4 6 3 4 4 6 4"},
+  {"imie":"Barnaba","nazwisko":"E.","oceny":"4 3 5 3 4 4 4 3 4 4 3 5"},
+  {"imie":"Barnaba","nazwisko":"Z.","oceny":"5 6 6 5 4 5 3 3 5 3 4 3"},
+  {"imie":"Barnaba","nazwisko":"I.","oceny":"3 4 3 3 4 3 4 3 3 3 4 3"},
+  {"imie":"Halina","nazwisko":"L.","oceny":"4 5 4 6 3 4 3 3 3 4 4 4"},
+  {"imie":"Marek","nazwisko":"K.","oceny":"5 5 5 4 3 6 4 4 3 4 6 3"},
+  {"imie":"Halina","nazwisko":"S.","oceny":"3 4 3 4 3 4 3 3 4 4 4 3"},
+  {"imie":"Joanna","nazwisko":"D.","oceny":"4 3 6 5 6 3 4 3 3 3 6 5"},
+  {"imie":"Natalia","nazwisko":"G.","oceny":"5 4 3 3 4 3 3 5 4 3 3 5"},
+  {"imie":"Ilona","nazwisko":"E.","oceny":"4 3 4 4 4 4 4 4 3 4 4 4"},
+  {"imie":"Wiktoria","nazwisko":"T.","oceny":"3 3 3 6 3 5 5 6 4 3 6 4"},
+  {"imie":"Karol","nazwisko":"M.","oceny":"4 3 3 4 4 3 3 3 4 4 3 4"},
+  {"imie":"Joanna","nazwisko":"B.","oceny":"5 2 4 5 4 5 2 5 5 4 2 5"},
+  {"imie":"Przemysław","nazwisko":"D.","oceny":"2 3 4 6 6 4 4 4 5 2 2 5"},
+  {"imie":"Iwona","nazwisko":"V.","oceny":"2 4 1 2 2 1 3 4 1 3 3 3"},
+  {"imie":"Joanna","nazwisko":"R.","oceny":"3 3 3 5 4 4 5 4 5 3 5 3"},
+  {"imie":"Mateusz","nazwisko":"O.","oceny":"2 4 4 3 2 4 3 3 2 4 3 2"},
+  {"imie":"Tomasz","nazwisko":"B.","oceny":"1 1 1 5 4 1 5 3 5 4 4 1"},
+  {"imie":"Jacek","nazwisko":"X.","oceny":"2 2 2 2 2 4 1 3 2 5 1 6"}
 ]
 ```
+Więcej danych testowych można wygenerować pod adresem: 
+https://mateusza2.github.io/Programowanie/Generatory/uczniowie.html
+
 
 1. Wypisać wszystkich uczniów w formacie `Imie Nazwisko`
 2. Wypisać wszystkich uczniów w formacie: `Nazwisko, Imie`
@@ -50,29 +72,31 @@ Poniższa lista zawiera odnotowane tankowania samochodu:
 
 ```
 tankowania = [
-    { "data" : 1065, "droga" : 56165.7, "paliwo" : 66.51, "cena" : 4.91 },
-    { "data" : 1068, "droga" : 56617.0, "paliwo" : 42.53, "cena" : 4.58 },
-    { "data" : 1074, "droga" : 57155.8, "paliwo" : 45.85, "cena" : 4.79 },
-    { "data" : 1082, "droga" : 57748.0, "paliwo" : 46.66, "cena" : 4.82 },
-    { "data" : 1090, "droga" : 58302.2, "paliwo" : 61.06, "cena" : 4.60 },
-    { "data" : 1098, "droga" : 58762.9, "paliwo" : 41.77, "cena" : 4.93 },
-    { "data" : 1106, "droga" : 59245.9, "paliwo" : 37.67, "cena" : 4.68 },
-    { "data" : 1110, "droga" : 59694.7, "paliwo" : 40.37, "cena" : 4.63 },
-    { "data" : 1114, "droga" : 60392.4, "paliwo" : 61.07, "cena" : 4.65 },
-    { "data" : 1120, "droga" : 61003.3, "paliwo" : 65.46, "cena" : 4.76 },
-    { "data" : 1123, "droga" : 61584.1, "paliwo" : 54.83, "cena" : 4.97 },
-    { "data" : 1128, "droga" : 62232.5, "paliwo" : 69.91, "cena" : 4.63 },
-    { "data" : 1133, "droga" : 62654.4, "paliwo" : 32.44, "cena" : 4.74 },
-    { "data" : 1138, "droga" : 63281.5, "paliwo" : 69.13, "cena" : 4.95 },
-    { "data" : 1142, "droga" : 63796.1, "paliwo" : 55.94, "cena" : 4.93 },
-    { "data" : 1148, "droga" : 64295.4, "paliwo" : 41.23, "cena" : 4.80 },
-    { "data" : 1153, "droga" : 64922.8, "paliwo" : 55.32, "cena" : 4.94 },
-    { "data" : 1159, "droga" : 65351.3, "paliwo" : 43.00, "cena" : 4.67 },
-    { "data" : 1167, "droga" : 65848.5, "paliwo" : 45.08, "cena" : 4.81 },
-    { "data" : 1173, "droga" : 66445.3, "paliwo" : 58.65, "cena" : 4.65 },
+  {"data":1491,"droga":68186,"paliwo":47.36,"cena":5.05},
+  {"data":1502,"droga":68633,"paliwo":47.46,"cena":5},
+  {"data":1504,"droga":69062,"paliwo":45.71,"cena":4.35},
+  {"data":1510,"droga":69631,"paliwo":42.43,"cena":4.95},
+  {"data":1517,"droga":70084,"paliwo":45.07,"cena":4.43},
+  {"data":1531,"droga":70620,"paliwo":42.46,"cena":4.51},
+  {"data":1550,"droga":71490,"paliwo":53.33,"cena":4.98},
+  {"data":1566,"droga":71887,"paliwo":42.88,"cena":4.61},
+  {"data":1585,"droga":72380,"paliwo":43.12,"cena":4.31},
+  {"data":1592,"droga":72758,"paliwo":43.08,"cena":4.43},
+  {"data":1597,"droga":73540,"paliwo":54.14,"cena":4.95},
+  {"data":1610,"droga":74039,"paliwo":46.41,"cena":4.91},
+  {"data":1625,"droga":74563,"paliwo":36.48,"cena":4.89},
+  {"data":1638,"droga":75077,"paliwo":47.09,"cena":4.92},
+  {"data":1652,"droga":75654,"paliwo":47.55,"cena":4.32},
+  {"data":1661,"droga":76358,"paliwo":52.14,"cena":4.92},
+  {"data":1664,"droga":76725,"paliwo":39.48,"cena":4.81},
+  {"data":1683,"droga":77064,"paliwo":39.07,"cena":4.49},
+  {"data":1696,"droga":77671,"paliwo":51.13,"cena":5.05},
+  {"data":1705,"droga":78064,"paliwo":45.19,"cena":4.58}
 ]
-
 ```
+
+Więcej danych testowych można wygenerować pod adresem:
+https://mateusza2.github.io/Programowanie/Generatory/tankowania.html
 
 1. Policzyć spalanie dla każdego tankowania.
 2. Policzyć koszt 1km dla każdego tankowania.
