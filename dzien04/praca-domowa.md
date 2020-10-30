@@ -114,3 +114,16 @@ Napisać funkcję `symuluj_rzuty( a, b, c )`, która symuluje `a` rzutów wykona
 
 Napisać wyrażenie konwertujące listę stawek VAT ze stringa postaci `A=23 B=8 C=0` na słownik postaci: `{ "A" : 23.0, "B" : 8.0, "C" : 0.0 }`
 
+# Pętle, tablice
+
+## Kalkulator RPN
+
+Stworzyć funkcję obliczającą wartość wyrażenia zapisanego w [Odwrotnej notacji polskiej](https://pl.wikipedia.org/wiki/Odwrotna_notacja_polska).
+
+Przykład: `4 5 + 3 * 1 +` równa się `28`
+
+Przykład: `2 7 + 3 / 14 3 - 4 * + 2 /` równa się `23.5`
+
+
+
+
