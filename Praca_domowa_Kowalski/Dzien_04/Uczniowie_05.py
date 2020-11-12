@@ -26,21 +26,29 @@ uczniowie = [
   {"imie":"Mateusz","nazwisko":"O.","oceny":"2 4 4 3 2 4 3 3 2 4 3 2"},
   {"imie":"Tomasz","nazwisko":"B.","oceny":"1 1 1 5 4 1 5 3 5 4 4 1"},
   {"imie":"Jacek","nazwisko":"X.","oceny":"2 2 2 2 2 4 1 3 2 5 1 6"}
+  # {"imie":"Wymiatacz","nazwisko":"Sz.","oceny":"5 6 6 6 6 6 6 6 6 6 6 6"},
+  # {"imie":"Justyna","nazwisko":"KK.","oceny":"5 5 5 6 6 6 6 6 6 6 6 6"},
+  # {"imie":"Stanislaw","nazwisko":"KK.","oceny":"5 5 5 5 5 6 6 6 6 6 6 6"}
 ]
 
 print("5. Wypisać wszystkich uczniów w formacie: Imie Nazwisko (3 lepszych) (gdzie 3 to liczba uczniow z wyzsza srednia)")
-srednia_max1 = 0
-srednia_max2 = 0
-srednia_max3 = 0
-
+srednia_1 = 0
+srednia_2 = 0
+srednia_3 = 0
 for u in uczniowie:
   oceny_int = [int(oceny) for oceny in u["oceny"] if oceny != " "]
   srednia_ocen = round(sum(oceny_int)/len(oceny_int),1)
-  if srednia_ocen > srednia_max1:
-      srednia_max1 = srednia_ocen
-  if srednia_ocen > srednia_max1:
-      srednia_max2 = srednia_ocen
-  if srednia_ocen > srednia_max2 and srednia_ocen > srednia_max1:
-      srednia_max3 = srednia_ocen
-  print(f"Średnia max 1: {srednia_max1}, średnia max 2: {srednia_max2}, srednia max 3: {srednia_max3}")
-  print(f"{u['imie']:<10} {u['nazwisko']:<3} Średnia: {srednia_ocen}")
+  if srednia_ocen > srednia_1:
+    srednia_1 = srednia_ocen
+  if srednia_ocen < srednia_1 and srednia_ocen > srednia_2:
+    srednia_2 = srednia_ocen
+  if srednia_ocen < srednia_2 and srednia_ocen > srednia_3:
+    srednia_3 = srednia_ocen
+print(f"ŚrednieMAX: {srednia_1}, {srednia_2}, {srednia_3}")
+for u in uczniowie:
+  oceny_int = [int(oceny) for oceny in u["oceny"] if oceny != " "]
+  srednia_ocen = round(sum(oceny_int)/len(oceny_int),1)
+  if srednia_ocen == srednia_1 or srednia_ocen == srednia_2 or srednia_ocen == srednia_3:
+    print(f"{u['imie']}, {u['nazwisko']}, {srednia_ocen} (3 lepszych)")
+
+
