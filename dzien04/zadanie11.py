@@ -7,7 +7,7 @@
 liczby = []
 
 while True:
-    x = input( "Podaj liczbe lub napisz KONIEC: " )
+    x = input( "Podaj liczbe lub napisz KONIEC: " ).upper()
     if x == "KONIEC":
         break
     liczby.append( int(x) )

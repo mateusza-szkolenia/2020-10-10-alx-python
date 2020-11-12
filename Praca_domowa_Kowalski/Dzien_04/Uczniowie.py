@@ -44,3 +44,5 @@ for u in uczniowie:
   oceny_int = [int(oceny) for oceny in u["oceny"] if oceny != " "]
   print(f"{u['imie']:<10} {u['nazwisko']:<3} Średnia: {round(sum(oceny_int)/len(oceny_int), 1)}")
 #wpaść na pomysł jak zamienić oceny na int... to było trudne
+
+print("5. Wypisać wszystkich uczniów w formacie: Imie Nazwisko (3 lepszych) (gdzie 3 to liczba uczniow z wyzsza srednia)")
