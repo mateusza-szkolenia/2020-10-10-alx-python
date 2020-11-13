@@ -40,3 +40,8 @@ for imie in zbior_imion:
   for uczen in uczniowie:
     if imie == uczen['imie']:
       print(f"{imie}, {uczen['imie']}")
+
+# KROK 2: ZAMIANA WARUNKU NA WYRAŻENIE LISTOWE:
+for imie in zbior_imion:
+  ile = [1 for uczen in uczniowie if imie == uczen['imie']]
+  print(ile)
