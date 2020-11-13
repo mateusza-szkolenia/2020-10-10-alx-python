@@ -34,3 +34,11 @@ uczniowie = [
   {"imie":"Maciej", "nazwisko":"C.","oceny":"4 4 5 5 5 4 4 5 5 5 3 5 5 1"}
 ]
 print("12. Wypisać imiona występujące w klasie wraz liczbą uczniów o tym imieniu: Imie (2)")
+zbior_imion = list(set([uczen['imie'] for uczen in uczniowie]))
+# print(zbior_imion) # 21 imion w zbior imion
+for imie in zbior_imion:
+  for uczen in uczniowie:
+    if uczen['imie'] == imie:
+      print(f"imie w zbiorze: {imie}, imie ucznia: {uczen['imie']}")
+
+
