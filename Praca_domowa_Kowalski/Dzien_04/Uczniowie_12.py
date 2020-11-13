@@ -29,6 +29,7 @@ uczniowie = [
   #### DODANI PRZEZE MNIE:
   {"imie":"Wymiatacz","nazwisko":"Sz.","oceny":"5 6 6 6 6 6 6 6 6 6 6 6"},
   {"imie":"Justyna","nazwisko":"KK.","oceny":"5 5 5 6 6 6 6 6 6 6 6 6 1"},
+  {"imie":"Justyna","nazwisko":"GG.","oceny":"5 5 1 6 6 6 6 6 6 6 6 6 1"},
   {"imie":"Stanislaw","nazwisko":"KK.","oceny":"5 5 5 5 5 6 6 6 6 6 6 6"},
   {"imie":"Gerwazy", "nazwisko":"D.","oceny":"4 4 5 5 5 4 4 5 5 5 6 5 5"},
   {"imie":"Maciej", "nazwisko":"C.","oceny":"4 4 5 5 5 4 4 5 5 5 3 5 5 1"}
@@ -45,3 +46,8 @@ for imie in zbior_imion:
 for imie in zbior_imion:
   ile = [1 for uczen in uczniowie if imie == uczen['imie']]
   print(ile)
+
+# KROK 3: MAMY JUŻ LICZBĘ WYSTĄPIEŃ, WYSTARCZY DODAĆ IMIĘ:
+for imie in zbior_imion:
+  ile = len([1 for uczen in uczniowie if imie == uczen['imie']])
+  print(f"{imie} => {ile}")
