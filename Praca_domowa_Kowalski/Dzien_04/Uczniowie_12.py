@@ -38,7 +38,7 @@ zbior_imion = list(set([uczen['imie'] for uczen in uczniowie]))
 # print(zbior_imion) # 21 imion w zbior imion
 for imie in zbior_imion:
   for uczen in uczniowie:
-    if uczen['imie'] == imie:
-      print(f"imie w zbiorze: {imie}, imie ucznia: {uczen['imie']}")
+    ile = [1 for imie in zbior_imion if imie == uczen['imie']]
+    print(f"imie w zbiorze: {imie}, imie ucznia: {uczen['imie']}, ile: {ile}")
 
 
