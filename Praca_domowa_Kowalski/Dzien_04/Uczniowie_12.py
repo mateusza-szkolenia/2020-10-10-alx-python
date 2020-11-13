@@ -35,10 +35,8 @@ uczniowie = [
 ]
 print("12. Wypisać imiona występujące w klasie wraz liczbą uczniów o tym imieniu: Imie (2)")
 zbior_imion = list(set([uczen['imie'] for uczen in uczniowie]))
-# print(zbior_imion) # 21 imion w zbior imion
+# KROK 1: WYSKAKUJA NAM TYLKO LICZBA ZGODNYCH PAR
 for imie in zbior_imion:
   for uczen in uczniowie:
-    ile = [1 for imie in zbior_imion if imie == uczen['imie']]
-    print(f"imie w zbiorze: {imie}, imie ucznia: {uczen['imie']}, ile: {ile}")
-
-
+    if imie == uczen['imie']:
+      print(f"{imie}, {uczen['imie']}")
