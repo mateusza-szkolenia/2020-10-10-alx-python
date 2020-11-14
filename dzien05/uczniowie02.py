@@ -20,6 +20,8 @@ class Uczen:
         self.imie = imie
         self.nazwisko = nazwisko
         self.oceny = [int(o) for o in oceny.split()]
+    def __str__(self):
+        return self.opisz_ucznia()
     def przywitaj_sie(self):
         print(f"Dzien dobry po raz {self.licznik}, jestem uczniem i nazywam sie {self.imie}!")
         self.licznik += 1
@@ -33,12 +35,8 @@ class Uczen:
         return f"{self.imie:12} {self.nazwisko:4} {self.srednia():6.2f} {self.czy_klasyfikowany():3} {self.czy_czerwony_pasek():3}"
     licznik = 1
 
-uczniowie = []
-
 # konwersja slownika na obiekty
-for u in uczniowie_in:
-    uczen = Uczen( **u )
-    uczniowie.append( uczen )
+uczniowie = [ Uczen(**u) for u in uczniowie_in ]
 
 for u in [ uu for uu in uczniowie if uu.czy_klasyfikowany() ]:
-    print( u.opisz_ucznia() )
+    print( u )
