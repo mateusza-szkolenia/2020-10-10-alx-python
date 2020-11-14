@@ -20,5 +20,11 @@ def czy_jest_pierwsza( n ):
             pass
     return True
 
-p = czy_jest_pierwsza( 942841 )
+def czy_jest_pierwsza2( n ):
+    for i in range( 2, int( ( n ** 0.5 ) + 1 ) ):
+        if n % i == 0:
+            return False
+    return True
+
+p = czy_jest_pierwsza( 33560764409 )
 print(p)
