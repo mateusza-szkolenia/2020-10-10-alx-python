@@ -20,13 +20,12 @@ class Uczen:
         print(f"Utworzono nowego ucznia o imieniu {imie}!")
         self.imie = imie
         self.nazwisko = nazwisko
-        self.oceny = oceny
+        self.oceny = [int(o) for o in oceny.split()]
     def przywitaj_sie(self):
         print(f"Dzien dobry po raz {self.licznik}, jestem uczniem i nazywam sie {self.imie}!")
         self.licznik += 1
     def srednia(self):
-        oceny = [int(o) for o in self.oceny.split()]
-        return sum(oceny) / len(oceny)
+        return sum(self.oceny) / len(self.oceny)
     licznik = 1
 
 u1 = Uczen("Maksymilian", "X.", "1 2 3 4 5 6")
