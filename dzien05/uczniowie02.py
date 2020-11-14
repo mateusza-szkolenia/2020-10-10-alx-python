@@ -24,19 +24,21 @@ class Uczen:
     def przywitaj_sie(self):
         print(f"Dzien dobry po raz {self.licznik}, jestem uczniem i nazywam sie {self.imie}!")
         self.licznik += 1
+    def srednia(self):
+        oceny = [int(o) for o in self.oceny.split()]
+        return sum(oceny) / len(oceny)
     licznik = 1
 
 u1 = Uczen("Maksymilian", "X.", "1 2 3 4 5 6")
 u2 = Uczen("Andrzej", "Z.", "5 5 5 6 6 6")
+print(f"U1 ma średnią {u1.srednia()}")
 u1.przywitaj_sie()
 u2.przywitaj_sie()
 u1.przywitaj_sie()
 u1.przywitaj_sie()
 u2.przywitaj_sie()
 
-def srednia_ucznia(uczen):
-    oceny = [ int(o) for o in uczen['oceny'].split() ]
-    return sum(oceny)/len(oceny)
+
 
 def opisz_ucznia( uczen ):
     return f"{uczen['imie']:12} {uczen['nazwisko']:4} {srednia_ucznia(uczen):6.2f} {czy_klasyfikowany(uczen):3} {czy_czerwony_pasek(uczen):3}"
