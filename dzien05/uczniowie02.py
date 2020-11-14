@@ -16,15 +16,20 @@ uczniowie = [
 ]
 
 class Uczen:
+    def __init__(self):
+        print("Utworzono nowego ucznia!")
     def przywitaj_sie(self):
         print(f"Dzien dobry po raz {self.licznik}, jestem uczniem!")
         self.licznik += 1
     licznik = 1
 
 u1 = Uczen()
+u2 = Uczen()
+u1.przywitaj_sie()
+u2.przywitaj_sie()
 u1.przywitaj_sie()
 u1.przywitaj_sie()
-u1.przywitaj_sie()
+u2.przywitaj_sie()
 
 def srednia_ucznia(uczen):
     oceny = [ int(o) for o in uczen['oceny'].split() ]
