@@ -1,4 +1,4 @@
-uczniowie = [
+uczniowie_in = [
   { "imie" : "Dariusz", "nazwisko" : "Y.", "oceny" : "4 4 2 3 2 5 2" },
   { "imie" : "Wiktoria", "nazwisko" : "A.", "oceny" : "5 4 4 3 5 3 4" },
   { "imie" : "Natalia", "nazwisko" : "I.", "oceny" : "4 3 4 3 3 3 4" },
@@ -17,7 +17,6 @@ uczniowie = [
 
 class Uczen:
     def __init__(self, imie="bezimienny", nazwisko="xxx", oceny="" ):
-        print(f"Utworzono nowego ucznia o imieniu {imie}!")
         self.imie = imie
         self.nazwisko = nazwisko
         self.oceny = [int(o) for o in oceny.split()]
@@ -34,21 +33,12 @@ class Uczen:
         return f"{self.imie:12} {self.nazwisko:4} {self.srednia():6.2f} {self.czy_klasyfikowany():3} {self.czy_czerwony_pasek():3}"
     licznik = 1
 
+uczniowie = []
 
-u1 = Uczen("Maksymilian", "X.", "1 2 3 4 5 6")
-u2 = Uczen("Andrzej", "Z.", "5 5 5 6 6 6")
-u3 = Uczen("Zenon", "X", "1 1 3 1 4 1")
-print(f"U1 ma średnią {u1.srednia()}")
-print(f"U2 ma czerwony pasek: {u2.czy_czerwony_pasek()}")
-print(f"U3 klasyfikowany: {u3.czy_klasyfikowany()}")
-print( u1.opisz_ucznia() )
-print( u2.opisz_ucznia() )
-print( u3.opisz_ucznia() )
+# konwersja slownika na obiekty
+for u in uczniowie_in:
+    uczen = Uczen( **u )
+    uczniowie.append( uczen )
 
-
-
-
-
-
-#for u in uczniowie:
-#    print(opisz_ucznia(u))
+for u in [ uu for uu in uczniowie if uu.czy_klasyfikowany() ]:
+    print( u.opisz_ucznia() )
