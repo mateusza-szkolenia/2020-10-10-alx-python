@@ -12,16 +12,23 @@ def rzut():
     return random.randint(1,6)
 
 def wykres( dane ):
+    SZER = 50
+    najwieksza = max([ wartosc for (klucz, wartosc) in dane ])
     for klucz, wartosc in dane:
+        #print( wartosc / najwieksza )
         #print( f"{klucz} {'X' * wartosc :10}")
-        print(f"{klucz:5}: {('X' * wartosc ):50} ({wartosc})")
+        print(f"{klucz:5}: {('X' * int( wartosc/najwieksza * SZER) ):{SZER}} ({wartosc})")
 
-rzuty = [ rzut() for i in range(100) ]
+ILE_RZUTOW = 1000
+
+rzuty = [ rzut() for i in range( ILE_RZUTOW ) ]
 print(rzuty)
 
 wyniki = [0,0,0,0,0,0,0]
 
-for wynik in [1,2,3,4,5,6]:
-    wyniki[wynik] = len( [ r for r in rzuty if r == wynik ] )
+for wynik in range(1,7):
+    wyniki[wynik] = len( [ None for r in rzuty if r == wynik ] )
 
-wykres( enumerate(wyniki) )
+print(wyniki)
+
+wykres( list(enumerate(wyniki)) )
