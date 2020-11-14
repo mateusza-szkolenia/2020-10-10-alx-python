@@ -16,17 +16,21 @@ uczniowie = [
 ]
 
 class Uczen:
-    def __init__(self, imie):
+    def __init__(self, imie, nazwisko, oceny ):
         print(f"Utworzono nowego ucznia o imieniu {imie}!")
         self.imie = imie
+        self.nazwisko = nazwisko
+        self.oceny = oceny
     def przywitaj_sie(self):
         print(f"Dzien dobry po raz {self.licznik}, jestem uczniem i nazywam sie {self.imie}!")
         self.licznik += 1
     licznik = 1
     imie = "bezimienny"
+    nazwisko = "XXX."
+    oceny = ""
 
-u1 = Uczen("Maksymilian")
-u2 = Uczen("Andrzej")
+u1 = Uczen("Maksymilian", "X.", "1 2 3 4 5 6")
+u2 = Uczen("Andrzej", "Z.", "5 5 5 6 6 6")
 u1.przywitaj_sie()
 u2.przywitaj_sie()
 u1.przywitaj_sie()
