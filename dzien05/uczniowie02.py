@@ -26,11 +26,15 @@ class Uczen:
         self.licznik += 1
     def srednia(self):
         return sum(self.oceny) / len(self.oceny)
+    def czy_klasyfikowany(self):
+        return len([o for o in self.oceny if o == 1]) <= 1
     licznik = 1
 
 u1 = Uczen("Maksymilian", "X.", "1 2 3 4 5 6")
 u2 = Uczen("Andrzej", "Z.", "5 5 5 6 6 6")
+u3 = Uczen("Zenon", "X", "1 1 3 1 4 1")
 print(f"U1 ma średnią {u1.srednia()}")
+print(f"U3 klasyfikowany: {u3.czy_klasyfikowany()}")
 u1.przywitaj_sie()
 u2.przywitaj_sie()
 u1.przywitaj_sie()
@@ -42,9 +46,7 @@ u2.przywitaj_sie()
 def opisz_ucznia( uczen ):
     return f"{uczen['imie']:12} {uczen['nazwisko']:4} {srednia_ucznia(uczen):6.2f} {czy_klasyfikowany(uczen):3} {czy_czerwony_pasek(uczen):3}"
 
-def czy_klasyfikowany( uczen ):
-    oceny = [int(o) for o in uczen['oceny'].split()]
-    return len( [o for o in oceny if o == 1] ) <= 1
+
 
 def czy_czerwony_pasek( uczen ):
     return srednia_ucznia(uczen) >= 4.75 and czy_klasyfikowany(uczen)
