@@ -7,8 +7,10 @@
 
 def czy_jest_pierwsza( n ):
     for i in range( 2, n ):
+        if i**2 > n:
+            break
         reszta = n % i
-        print(f"{n:3} % {i:3} ==> {reszta:3}")
+        #print(f"{n:3} / {i:3}  {n/i}  ==> {reszta:3}")
         if reszta == 0:
             # na pewno nie jest liczba pierwsza
             return False
@@ -18,5 +20,5 @@ def czy_jest_pierwsza( n ):
             pass
     return True
 
-p = czy_jest_pierwsza( 31 )
+p = czy_jest_pierwsza( 942841 )
 print(p)
