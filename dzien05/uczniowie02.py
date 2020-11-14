@@ -30,7 +30,10 @@ class Uczen:
         return len([o for o in self.oceny if o == 1]) <= 1
     def czy_czerwony_pasek(self):
         return self.srednia() >= 4.75 and self.czy_klasyfikowany()
+    def opisz_ucznia(self):
+        return f"{self.imie:12} {self.nazwisko:4} {self.srednia():6.2f} {self.czy_klasyfikowany():3} {self.czy_czerwony_pasek():3}"
     licznik = 1
+
 
 u1 = Uczen("Maksymilian", "X.", "1 2 3 4 5 6")
 u2 = Uczen("Andrzej", "Z.", "5 5 5 6 6 6")
@@ -38,16 +41,10 @@ u3 = Uczen("Zenon", "X", "1 1 3 1 4 1")
 print(f"U1 ma średnią {u1.srednia()}")
 print(f"U2 ma czerwony pasek: {u2.czy_czerwony_pasek()}")
 print(f"U3 klasyfikowany: {u3.czy_klasyfikowany()}")
-u1.przywitaj_sie()
-u2.przywitaj_sie()
-u1.przywitaj_sie()
-u1.przywitaj_sie()
-u2.przywitaj_sie()
+print( u1.opisz_ucznia() )
+print( u2.opisz_ucznia() )
+print( u3.opisz_ucznia() )
 
-
-
-def opisz_ucznia( uczen ):
-    return f"{uczen['imie']:12} {uczen['nazwisko']:4} {srednia_ucznia(uczen):6.2f} {czy_klasyfikowany(uczen):3} {czy_czerwony_pasek(uczen):3}"
 
 
 
