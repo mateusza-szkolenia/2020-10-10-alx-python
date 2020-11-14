@@ -15,6 +15,17 @@ uczniowie = [
   { "imie" : "Jakub", "nazwisko" : "N.", "oceny" : "2 4 4 2 3 4 4" }
 ]
 
+class Uczen:
+    def przywitaj_sie(self):
+        print(f"Dzien dobry po raz {self.licznik}, jestem uczniem!")
+        self.licznik += 1
+    licznik = 1
+
+u1 = Uczen()
+u1.przywitaj_sie()
+u1.przywitaj_sie()
+u1.przywitaj_sie()
+
 def srednia_ucznia(uczen):
     oceny = [ int(o) for o in uczen['oceny'].split() ]
     return sum(oceny)/len(oceny)
@@ -29,5 +40,5 @@ def czy_klasyfikowany( uczen ):
 def czy_czerwony_pasek( uczen ):
     return srednia_ucznia(uczen) >= 4.75 and czy_klasyfikowany(uczen)
 
-for u in uczniowie:
-    print(opisz_ucznia(u))
+#for u in uczniowie:
+#    print(opisz_ucznia(u))

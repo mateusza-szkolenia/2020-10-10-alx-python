@@ -15,6 +15,8 @@ uczniowie = [
   { "imie" : "Jakub", "nazwisko" : "N.", "oceny" : "2 4 4 2 3 4 4" }
 ]
 
+
+
 def srednia_ucznia(uczen):
     oceny = [ int(o) for o in uczen['oceny'].split() ]
     return sum(oceny)/len(oceny)
