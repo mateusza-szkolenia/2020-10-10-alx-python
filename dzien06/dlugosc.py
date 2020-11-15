@@ -23,7 +23,15 @@ class Dlugosc:
                 self._jednostka
             )
         elif type(other) in (int,float):
+            # mam mieszane uczucia, czy klasa powinna sie tak zachowywac :-)
             return Dlugosc( self._wartosc + other, self._jednostka )
+        else:
+            return None
+    def __truediv__(self, other):
+        if type(other) == Dlugosc:
+            return self._wartosc_w_m() / other._wartosc_w_m()
+        elif type(other) in (int, float):
+            return Dlugosc( self._wartosc / other, self._jednostka )
         else:
             return None
     def __sub__(self, other):
@@ -44,13 +52,13 @@ class Dlugosc:
 #d = Dlugosc(1, 'mi')    # 1.609km => 160934 cm
 #print( d._wartosc_w_jednostce('cm') )
 
-d3 = Dlugosc( 50, 'cm' )
-d4 = Dlugosc( 10, 'in' ) # okolo 25 cm
+#d3 = Dlugosc( 50, 'cm' )
+#d4 = Dlugosc( 10, 'in' ) # okolo 25 cm
 
-print( d3 + "123" ) # chcemy żeby wynik miał jednostkę cm
+#print( d3 + 123 ) # chcemy żeby wynik miał jednostkę cm
 
-#print( Dlugosc( 5, 'km' ) / 2 )                     # wynik to Dlugosc( 2.5, 'km' )
-#print( Dlugosc( 6, 'km' ) / Dlugosc( 2000, 'm') )   # wynik to 3 (liczba)
+print( ( Dlugosc( 5, 'km' ) / 2 + Dlugosc( 10, 'km' ) * 3 ).konwertuj_na('mi')   )
+print( Dlugosc( 4, 'mi' ) / Dlugosc( 6, 'km') )   # wynik to 3 (liczba)
 
 
 
