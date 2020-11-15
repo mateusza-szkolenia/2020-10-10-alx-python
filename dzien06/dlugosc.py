@@ -17,10 +17,7 @@ class Dlugosc:
 
     _mnozniki = { 'm': 1, 'km' : 1000, 'mi' : 1_609.344, 'cm' : 0.01, 'in' : 0.0254 }
 
-d1 = Dlugosc( 2, 'mi' )
-d2 = Dlugosc( 3, 'km' )
-
-d3 = d1 + d2
+d3 = Dlugosc(10, 'in') + Dlugosc(5, 'cm')
 
 print( d3 )
 
