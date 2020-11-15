@@ -44,5 +44,8 @@ d4 = Dlugosc( 10, 'in' ) # okolo 25 cm
 
 print( d3 + d4 ) # chcemy żeby wynik miał jednostkę cm
 
+print( Dlugosc( 5, 'km' ) / 2 )                     # wynik to Dlugosc( 2.5, 'km' )
+print( Dlugosc( 6, 'km' ) / Dlugosc( 2000, 'm') )   # wynik to 3 (liczba)
+
 
 
