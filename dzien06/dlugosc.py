@@ -13,8 +13,14 @@ class Dlugosc:
     def __neg__(self):
         return -1 * self
     def __add__(self, other):
-        nowa_wartosc = self._wartosc + ( other._wartosc if self._jednostka == other._jednostka else other._wartosc_w_jednostce( self._jednostka ) )
-        return Dlugosc( nowa_wartosc, self._jednostka )
+        return Dlugosc(
+            self._wartosc + (
+                other._wartosc
+                if self._jednostka == other._jednostka
+                else other._wartosc_w_jednostce( self._jednostka )
+            ),
+            self._jednostka
+        )
     def __sub__(self, other):
         return self + ( - other )
     def __mul__(self, other):
