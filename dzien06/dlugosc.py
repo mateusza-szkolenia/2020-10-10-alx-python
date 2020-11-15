@@ -19,13 +19,7 @@ class Dlugosc:
             nowa_jednostka = 'm'
         return Dlugosc( nowa_wartosc, nowa_jednostka )
     def __sub__(self, other):
-        if self._jednostka == other._jednostka:
-            nowa_wartosc = self._wartosc - other._wartosc
-            nowa_jednostka = self._jednostka
-        else:
-            nowa_wartosc = self._wartosc_w_m() - other._wartosc_w_m()
-            nowa_jednostka = 'm'
-        return Dlugosc( nowa_wartosc, nowa_jednostka )
+        return self + ( - other )
     def __mul__(self, other):
         if type( other ) in ( float, int ):
             return Dlugosc( self._wartosc * other, self._jednostka )
@@ -37,7 +31,7 @@ class Dlugosc:
     _mnozniki = { 'm': 1, 'km' : 1000, 'mi' : 1_609.344, 'cm' : 0.01, 'in' : 0.0254 }
     __rmul__ = __mul__
 
-d3 = - ( Dlugosc( 13, 'in' ) + Dlugosc( 1, 'in' ) ) + Dlugosc( 10, 'm' )
+d3 = - ( Dlugosc( 13, 'in' ) - Dlugosc( 15, 'in' ) ) + Dlugosc( 10, 'm' )
 
 print( d3 )
 
