@@ -22,6 +22,9 @@ class Uczen:
         self._oceny = [int(o) for o in oceny.split()]
     def __str__(self):
         return self._opisz_ucznia()
+    def __gt__(self, other):
+        # jest to dyskusyjne, jak należy porównywać uczniów...
+        return self._nazwisko > other._nazwisko
     def przywitaj_sie(self):
         print(f"Dzien dobry po raz {self._licznik}, jestem uczniem i nazywam sie {self._imie}!")
         self._licznik += 1
@@ -35,8 +38,14 @@ class Uczen:
         return f"{self._imie:12} {self._nazwisko:4} {self.srednia():6.2f} {self.czy_klasyfikowany():3} {self.czy_czerwony_pasek():3}"
     _licznik = 1
 
-# konwersja slownika na obiekty
+# konwersja slowników na obiekty
 uczniowie = [ Uczen(**u) for u in uczniowie_in ]
 
-for u in [ uu for uu in uczniowie if uu.czy_klasyfikowany() ]:
-    print( u )
+#for u in [ uu for uu in uczniowie if uu.czy_klasyfikowany() ]:
+#    print( u )
+
+u1 = uczniowie[0]
+u2 = uczniowie[1]
+print(u1)
+print(u2)
+print(u1 < u2)
