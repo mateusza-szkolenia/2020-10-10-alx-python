@@ -17,8 +17,8 @@ class Dlugosc:
             nowa_wartosc = self._wartosc + other._wartosc
             nowa_jednostka = self._jednostka
         else:
-            nowa_wartosc = self._wartosc_w_m() + other._wartosc_w_m()
-            nowa_jednostka = 'm'
+            nowa_wartosc = self._wartosc + other._wartosc_w_jednostce( self._jednostka )
+            nowa_jednostka = self._jednostka
         return Dlugosc( nowa_wartosc, nowa_jednostka )
     def __sub__(self, other):
         return self + ( - other )
@@ -39,7 +39,7 @@ class Dlugosc:
 #print( d._wartosc_w_jednostce('cm') )
 
 d3 = Dlugosc( 50, 'cm' )
-d4 = Dlugosc( 10, 'in' )
+d4 = Dlugosc( 10, 'in' ) # okolo 25 cm
 
 print( d3 + d4 ) # chcemy żeby wynik miał jednostkę cm
 
