@@ -19,7 +19,14 @@ class Uczen:
     def __init__(self, imie="bezimienny", nazwisko="xxx", oceny="" ):
         self._imie = imie
         self._nazwisko = nazwisko
-        self._oceny = [int(o) for o in oceny.split()]
+        if type(oceny) == list:
+            self._oceny = oceny
+        elif type(oceny) == str:
+            self._oceny = [int(o) for o in oceny.split()]
+        else:
+            self._oceny = []
+    def __repr__(self):
+        return f"Uczen({repr(self._imie)}, {repr(self._nazwisko)}, {repr(self._oceny)})"
     def __str__(self):
         return self._opisz_ucznia()
     def __gt__(self, other):
@@ -46,6 +53,4 @@ uczniowie = [ Uczen(**u) for u in uczniowie_in ]
 
 u1 = uczniowie[0]
 u2 = uczniowie[1]
-print(u1)
-print(u2)
-print(u1 < u2)
+print(repr(u1))
