@@ -17,8 +17,7 @@ class Dlugosc:
             nowa_wartosc = self._wartosc + other._wartosc
         else:
             nowa_wartosc = self._wartosc + other._wartosc_w_jednostce( self._jednostka )
-        nowa_jednostka = self._jednostka
-        return Dlugosc( nowa_wartosc, nowa_jednostka )
+        return Dlugosc( nowa_wartosc, self._jednostka )
     def __sub__(self, other):
         return self + ( - other )
     def __mul__(self, other):
