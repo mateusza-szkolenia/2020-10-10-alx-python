@@ -38,10 +38,10 @@ class Dlugosc:
 #d = Dlugosc(1, 'mi')    # 1.609km => 160934 cm
 #print( d._wartosc_w_jednostce('cm') )
 
-d3 = Dlugosc( 50, 'm' )
-d4 = d3.konwertuj_na('in')
+d3 = Dlugosc( 50, 'cm' )
+d4 = Dlugosc( 10, 'in' )
 
-print( d3 )
-print( d4 ) # wypisze 1968.5039370078741 in
+print( d3 + d4 ) # chcemy żeby wynik miał jednostkę cm
+
 
 
