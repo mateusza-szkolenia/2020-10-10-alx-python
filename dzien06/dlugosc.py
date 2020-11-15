@@ -31,8 +31,10 @@ class Dlugosc:
     _mnozniki = { 'm': 1, 'km' : 1000, 'mi' : 1_609.344, 'cm' : 0.01, 'in' : 0.0254 }
     __rmul__ = __mul__
 
-d3 = - ( Dlugosc( 13, 'in' ) - Dlugosc( 15, 'in' ) ) + Dlugosc( 10, 'm' )
+d3 = Dlugosc( 50, 'm' )
+d4 = d3.konwertuj_na('in')
 
 print( d3 )
+print( d4 ) # wypisze 1968.5039370078741 in
 
 
