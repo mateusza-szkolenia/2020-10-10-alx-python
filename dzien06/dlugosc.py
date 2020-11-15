@@ -15,10 +15,9 @@ class Dlugosc:
     def __add__(self, other):
         if self._jednostka == other._jednostka:
             nowa_wartosc = self._wartosc + other._wartosc
-            nowa_jednostka = self._jednostka
         else:
             nowa_wartosc = self._wartosc + other._wartosc_w_jednostce( self._jednostka )
-            nowa_jednostka = self._jednostka
+        nowa_jednostka = self._jednostka
         return Dlugosc( nowa_wartosc, nowa_jednostka )
     def __sub__(self, other):
         return self + ( - other )
