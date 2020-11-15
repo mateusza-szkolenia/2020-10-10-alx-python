@@ -16,12 +16,18 @@ class Dlugosc:
             nowa_wartosc = self._wartosc_w_m() + other._wartosc_w_m()
             nowa_jednostka = 'm'
         return Dlugosc( nowa_wartosc, nowa_jednostka )
+    def __mul__(self, other):
+        if type( other ) in ( float, int ):
+            return Dlugosc( self._wartosc * other, self._jednostka )
+        return None
     def __str__(self):
         return f"{self._wartosc} {self._jednostka}"
-
+    def __repr__(self):
+        return f"Dlugosc({repr(self._wartosc)}, {repr(self._jednostka)})"
     _mnozniki = { 'm': 1, 'km' : 1000, 'mi' : 1_609.344, 'cm' : 0.01, 'in' : 0.0254 }
+    __rmul__ = __mul__
 
-d3 = Dlugosc(10, 'in') + Dlugosc(5, 'in')
+d3 = Dlugosc(10, 'in') * Dlugosc( 13, 'in' )
 
 print( d3 )
 
