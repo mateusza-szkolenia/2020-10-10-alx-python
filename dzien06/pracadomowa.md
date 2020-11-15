@@ -28,3 +28,8 @@ x = Dlugosc( 3, "in" )
 p5 = x**2   # obslugujemy tylko podnoszenie do potegi 2
 print(p5) # powinno napisać "9 in2"
 ```
+
+# Waluty
+
+TODO
+
