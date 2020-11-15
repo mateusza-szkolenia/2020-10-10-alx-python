@@ -44,7 +44,7 @@ class Dlugosc:
             return Dlugosc( self._wartosc * other, self._jednostka )
         return None
     def __str__(self):
-        return f"{self._wartosc} {self._jednostka}"
+        return f"{self._wartosc:.1f} {self._jednostka}"
     def __repr__(self):
         return f"Dlugosc({repr(self._wartosc)}, {repr(self._jednostka)})"
     def konwertuj_na(self, jednostka):
