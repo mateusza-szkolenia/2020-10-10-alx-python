@@ -49,7 +49,7 @@ class Dlugosc:
         return f"Dlugosc({repr(self._wartosc)}, {repr(self._jednostka)})"
     def konwertuj_na(self, jednostka):
         return Dlugosc( self._wartosc_w_jednostce(jednostka), jednostka )
-    _mnozniki = { 'm': 1, 'km' : 1000, 'mi' : 1_609.344, 'cm' : 0.01, 'in' : 0.0254 }
+    _mnozniki = { 'm': 1, 'km' : 1000, 'mi' : 1_609.344, 'cm' : 0.01, 'in' : 0.0254, 'mm' : 0.001, 'dm' : 0.1, 'ft' : 0.3048 }
     __rmul__ = __mul__
 
 #d = Dlugosc(1, 'mi')    # 1.609km => 160934 cm
