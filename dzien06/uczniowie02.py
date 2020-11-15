@@ -17,23 +17,23 @@ uczniowie_in = [
 
 class Uczen:
     def __init__(self, imie="bezimienny", nazwisko="xxx", oceny="" ):
-        self.imie = imie
-        self.nazwisko = nazwisko
-        self.oceny = [int(o) for o in oceny.split()]
+        self._imie = imie
+        self._nazwisko = nazwisko
+        self._oceny = [int(o) for o in oceny.split()]
     def __str__(self):
-        return self.opisz_ucznia()
+        return self._opisz_ucznia()
     def przywitaj_sie(self):
-        print(f"Dzien dobry po raz {self.licznik}, jestem uczniem i nazywam sie {self.imie}!")
-        self.licznik += 1
+        print(f"Dzien dobry po raz {self._licznik}, jestem uczniem i nazywam sie {self._imie}!")
+        self._licznik += 1
     def srednia(self):
-        return sum(self.oceny) / len(self.oceny)
+        return sum(self._oceny) / len(self._oceny)
     def czy_klasyfikowany(self):
-        return len([o for o in self.oceny if o == 1]) <= 1
+        return len([o for o in self._oceny if o == 1]) <= 1
     def czy_czerwony_pasek(self):
         return self.srednia() >= 4.75 and self.czy_klasyfikowany()
-    def opisz_ucznia(self):
-        return f"{self.imie:12} {self.nazwisko:4} {self.srednia():6.2f} {self.czy_klasyfikowany():3} {self.czy_czerwony_pasek():3}"
-    licznik = 1
+    def _opisz_ucznia(self):
+        return f"{self._imie:12} {self._nazwisko:4} {self.srednia():6.2f} {self.czy_klasyfikowany():3} {self.czy_czerwony_pasek():3}"
+    _licznik = 1
 
 # konwersja slownika na obiekty
 uczniowie = [ Uczen(**u) for u in uczniowie_in ]
