@@ -67,4 +67,8 @@ d2 = Dlugosc( 0, 'in') + 3 * Dlugosc( "24.5 cm" ) + Dlugosc( "1 ft" ) / 3
 
 print( d2 < Dlugosc( "100 cm" ) )
 
-
+x = [ Dlugosc("1 cm"), Dlugosc("1 km"), Dlugosc( "0.01 mi"), Dlugosc("1 in") ]
+x.sort()
+print(x)
+x.reverse()
+print(x)
