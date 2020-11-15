@@ -1,5 +1,8 @@
 class Dlugosc:
     def __init__(self, wartosc, jednostka='m'):
+        if type(wartosc) == str:
+            a, b = (wartosc+" "+jednostka).split()[0:2]
+            wartosc, jednostka = float(a), b
         self._wartosc = wartosc
         self._jednostka = jednostka
     def _wartosc_w_m(self):
