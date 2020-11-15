@@ -13,14 +13,19 @@ class Dlugosc:
     def __neg__(self):
         return -1 * self
     def __add__(self, other):
-        return Dlugosc(
-            self._wartosc + (
-                other._wartosc
-                if self._jednostka == other._jednostka
-                else other._wartosc_w_jednostce( self._jednostka )
-            ),
-            self._jednostka
-        )
+        if type(other) == Dlugosc:
+            return Dlugosc(
+                self._wartosc + (
+                    other._wartosc
+                    if self._jednostka == other._jednostka
+                    else other._wartosc_w_jednostce( self._jednostka )
+                ),
+                self._jednostka
+            )
+        elif type(other) in (int,float):
+            return Dlugosc( self._wartosc + other, self._jednostka )
+        else:
+            return None
     def __sub__(self, other):
         return self + ( - other )
     def __mul__(self, other):
@@ -42,10 +47,10 @@ class Dlugosc:
 d3 = Dlugosc( 50, 'cm' )
 d4 = Dlugosc( 10, 'in' ) # okolo 25 cm
 
-print( d3 + d4 ) # chcemy żeby wynik miał jednostkę cm
+print( d3 + "123" ) # chcemy żeby wynik miał jednostkę cm
 
-print( Dlugosc( 5, 'km' ) / 2 )                     # wynik to Dlugosc( 2.5, 'km' )
-print( Dlugosc( 6, 'km' ) / Dlugosc( 2000, 'm') )   # wynik to 3 (liczba)
+#print( Dlugosc( 5, 'km' ) / 2 )                     # wynik to Dlugosc( 2.5, 'km' )
+#print( Dlugosc( 6, 'km' ) / Dlugosc( 2000, 'm') )   # wynik to 3 (liczba)
 
 
 
