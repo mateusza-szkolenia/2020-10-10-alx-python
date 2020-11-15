@@ -17,7 +17,10 @@ class Dlugosc:
 
     _mnozniki = { 'm': 1, 'km' : 1000, 'mi' : 1_609.344, 'cm' : 0.01, 'in' : 0.0254 }
 
-d3 = Dlugosc(10, 'in') + Dlugosc(5, 'cm')
+# Przerobic kod tak, aby dodanie 2 Dlugosci o tej samej jednostce nie powodowalo konwersji na metry
+
+d3 = Dlugosc(10, 'in') + Dlugosc(5, 'in')
+# chcialbym aby nowa dlugosc caly czas byla w calach (in)
 
 print( d3 )
 
