@@ -9,18 +9,19 @@ class Dlugosc:
     def __eq__(self, other):
         return self._wartosc_w_m() == other._wartosc_w_m()
     def __add__(self, other):
-        nowa_wartosc = self._wartosc_w_m() + other._wartosc_w_m()
-        nowa_jednostka = 'm'
+        if self._jednostka == other._jednostka:
+            nowa_wartosc = self._wartosc + other._wartosc
+            nowa_jednostka = self._jednostka
+        else:
+            nowa_wartosc = self._wartosc_w_m() + other._wartosc_w_m()
+            nowa_jednostka = 'm'
         return Dlugosc( nowa_wartosc, nowa_jednostka )
     def __str__(self):
         return f"{self._wartosc} {self._jednostka}"
 
     _mnozniki = { 'm': 1, 'km' : 1000, 'mi' : 1_609.344, 'cm' : 0.01, 'in' : 0.0254 }
 
-# Przerobic kod tak, aby dodanie 2 Dlugosci o tej samej jednostce nie powodowalo konwersji na metry
-
 d3 = Dlugosc(10, 'in') + Dlugosc(5, 'in')
-# chcialbym aby nowa dlugosc caly czas byla w calach (in)
 
 print( d3 )
 
