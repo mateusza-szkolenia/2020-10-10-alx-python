@@ -63,5 +63,8 @@ class Dlugosc:
 print( ( Dlugosc( 5, 'km' ) / 2 + Dlugosc( 10, 'km' ) * 3 ).konwertuj_na('mi')   )
 print( Dlugosc( 4, 'mi' ) / Dlugosc( 6, 'km') )   # wynik to 3 (liczba)
 
+d2 = Dlugosc( 0, 'in') + 3 * Dlugosc( "24.5 cm" ) + Dlugosc( "1 ft" ) / 3
+
+print( d2 < Dlugosc( "100 cm" ) )
 
 
