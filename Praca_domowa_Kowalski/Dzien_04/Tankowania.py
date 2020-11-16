@@ -20,7 +20,6 @@ tankowania = [
   {"data":1696,"droga":77671,"paliwo":51.13,"cena":5.05},
   {"data":1705,"droga":78064,"paliwo":45.19,"cena":4.58}
 ]
-
 def koszt_1_km(t):
     koszt = t['paliwo'] * t['cena'] / t['droga'] * 1000
     return koszt
@@ -59,13 +58,20 @@ def koszt_min(t):
             koszt_min = koszt
     return koszt_min
 
+def koszt_sredni_dzienny(t):
+    ilosc_dni = tankowania[-1]['data'] - tankowania[0]['data']
+    koszt_dzienny = [t['cena'] * t['paliwo'] for t in tankowania]
+    return sum(koszt_dzienny)/ilosc_dni
+
 nr_tankowania = 0
 for t in tankowania:
   nr_tankowania +=1
   koszt = koszt_1_km(t)
   spalanie = srednie_spalanie(t)
+  # koszt_dzienny = koszt_dzienny(t)
   print(f"{nr_tankowania:2}. Koszt 1 km: {koszt:.2f}, spalanie: {spalanie:.2f}")
 
 print(f"MIN: {koszt_min(t):.2f}, MAX: {koszt_max(t):.2f}")
-print(f"Koszt 1 km dla calej bazy: {koszt_globalny(t):.2f}")
-print(f"Srednie spalanie dla calej bazy: {srednia_globalna(t):.2f}")
+print(f"Koszt 1 km dla całej bazy: {koszt_globalny(t):.2f}")
+print(f"średnie spalanie dla całej bazy: {srednia_globalna(t):.2f}")
+print(f"Średni koszt dzienny: {koszt_sredni_dzienny(t):.2f}")
