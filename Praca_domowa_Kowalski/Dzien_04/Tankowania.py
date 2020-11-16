@@ -21,7 +21,7 @@ tankowania = [
   {"data":1705,"droga":78064,"paliwo":45.19,"cena":4.58}
 ]
 
-def koszt_tankowania(t):
+def koszt_1_km(t):
     koszt = t['paliwo'] * t['cena'] / t['droga'] * 1000
     return koszt
 
@@ -29,17 +29,43 @@ def srednie_spalanie(t):
     spalanie = t['paliwo']/t['droga'] * 1000
     return spalanie
 
-pomiar = 0
-koszt_max = None
-koszt_min = None
+def koszt_globalny(t):
+    koszt_skladany = []
+    for t in tankowania:
+      koszt = koszt_1_km(t)
+      koszt_skladany.append(koszt)
+    return sum(koszt_skladany)/len(koszt_skladany)
+
+def srednia_globalna(t):
+    srednia_skladana = []
+    for t in tankowania:
+      srednia = srednie_spalanie(t)
+      srednia_skladana.append(srednia)
+    return sum(srednia_skladana)/len(srednia_skladana)
+
+def koszt_max(t):
+    koszt_max = None
+    for t in tankowania:
+        koszt = koszt_1_km(t)
+        if koszt_max == None or koszt_max < koszt:
+            koszt_max = koszt
+    return koszt_max
+
+def koszt_min(t):
+    koszt_min = None
+    for t in tankowania:
+        koszt = koszt_1_km(t)
+        if koszt_min == None or koszt_min > koszt:
+            koszt_min = koszt
+    return koszt_min
+
+nr_tankowania = 0
 for t in tankowania:
-  pomiar +=1
-  koszt = koszt_tankowania(t)
-  if koszt_min == None or koszt_min > koszt:
-    koszt_min = koszt
-  if koszt_max == None or koszt_max < koszt:
-    koszt_max = koszt
+  nr_tankowania +=1
+  koszt = koszt_1_km(t)
+  spalanie = srednie_spalanie(t)
+  print(f"{nr_tankowania:2}. Koszt 1 km: {koszt:.2f}, spalanie: {spalanie:.2f}")
 
-  print(f"{pomiar:2}. Koszt tank: {koszt:.2f}")
-
-print(f"MIN: {koszt_min:.2f}, MAX: {koszt_max:.2f}")
+print(f"MIN: {koszt_min(t):.2f}, MAX: {koszt_max(t):.2f}")
+print(f"Koszt 1 km dla calej bazy: {koszt_globalny(t):.2f}")
+print(f"Srednie spalanie dla calej bazy: {srednia_globalna(t):.2f}")
