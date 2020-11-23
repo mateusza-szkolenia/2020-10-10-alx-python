@@ -57,18 +57,48 @@ class Dlugosc:
     __rmul__ = __mul__
 
 class Pole:
+    _przeliczniki = { 'm2': 1, 'cm2': 0.0001 }
     def __init__(self, wartosc_pola, jednostka_kw='m2'):
         # assert wartosc_pola > 0 and jednostka_kw != '' and type(wartosc_pola) == int or float
+        if type(wartosc_pola) == str:
+            i, j = wartosc_pola.split()
+            wartosc_pola, jednostka_kw = float(i), j
         self._wartosc_pola = wartosc_pola
         self._jednostka_kw = jednostka_kw
     def __str__(self):
         return f"{self._wartosc_pola} {self._jednostka_kw}"
 
-d1 = Dlugosc("200 cm")
-d2 = Dlugosc("3 m")
-print(d1)
-print(d2)
-d3 = d1*d2
-print(d3)
-d4 = Pole("144 cm2")
-print(d4)
+
+    def __add__(self, other):
+        if type(other) == Pole:
+            nowa_wartosc_pola = self._wartosc_pola + other._wartosc_pola
+            nowa_jednostka_kw = self._jednostka_kw
+            return Pole(nowa_wartosc_pola, nowa_jednostka_kw)
+
+    def _wartosc_w_m2(self):
+        return self._wartosc_pola * self._przeliczniki[self._jednostka_kw]
+    def _wartosc_w_jednostce_kw(self, jednostka_kw):
+        return self._wartosc_w_m2() / self._przeliczniki[jednostka_kw]
+    def __truediv__(self, other):
+        if type(other) == Pole:
+            proporcja = self._wartosc_w_m2() / other._wartosc_w_m2()
+            return f"{proporcja:.2f}"
+        elif type(other) in (int, float):
+            return Pole( self._wartosc_w_m2() / other, self._jednostka_kw )
+        else:
+            return None
+
+# d1 = Dlugosc("200 cm")
+# d2 = Dlugosc("3 m")
+# print(d1)
+# print(d2)
+# d3 = d1*d2
+# print(d3)
+d4 = Pole("100 m2")
+# # # print(d4)
+d5 = Pole("100 cm2")
+d6 = d4+d5
+print(d6)
+
+print(d4 / d5)
+print(d4 / 5)
