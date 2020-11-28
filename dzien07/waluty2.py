@@ -8,8 +8,10 @@ def podaj_kurs( waluta ):
 def przelicz( kwota, waluta_z, waluta_na ):
     return kwota * podaj_kurs(waluta_z) / podaj_kurs(waluta_na)
 
-with open("dane.txt", "r") as dane, open("wynik.txt", "w") as wynik:
-    for linia in dane:
-        k, w1, w2 = linia.split()
-        k = float(k)
+with open("wynik.txt", "w") as wynik:
+    zlecenia = json.load(open("dane.json"))
+    for zlecenie in zlecenia:
+        k = zlecenie['kwota']
+        w1 = zlecenie['waluta-z']
+        w2 = zlecenie['waluta-na']
         wynik.write(f"{k} {w1} ==> {przelicz(k, w1, w2)} {w2}\n")
