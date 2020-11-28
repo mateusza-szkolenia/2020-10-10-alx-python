@@ -6,14 +6,10 @@ def podaj_kurs( waluta ):
                 return float(k)
 
 def przelicz( kwota, waluta_z, waluta_na ):
-    return kwota * KURSY[waluta_z] / KURSY[waluta_na]
+    return kwota * podaj_kurs(waluta_z) / podaj_kurs(waluta_na)
 
-
-kurs_EURO = podaj_kurs("EUR")
-print(kurs_EURO)
-
-#with open("dane.txt", "r") as f:
-#    for linia in f:
-#        k, w1, w2 = linia.split()
-#        k = float(k)
-#        print(f"{k} {w1} ==> {przelicz(k, w1, w2)} {w2}")
+with open("dane.txt", "r") as dane, open("wynik.txt", "w") as wynik:
+    for linia in dane:
+        k, w1, w2 = linia.split()
+        k = float(k)
+        wynik.write(f"{k} {w1} ==> {przelicz(k, w1, w2)} {w2}\n")
