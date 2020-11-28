@@ -20,4 +20,12 @@ for z in zlecenia:
     dz = z['data']
     w = z['waluta']
     kurs = pobierz_kurs(w, dz)
+    if z['akcja'] == 'kup':
+        portfel['PLN'] -= z['ile'] * kurs
+        portfel[w] += z['ile']
+    if z['akcja'] == 'sprzedaj':
+        portfel['PLN'] += z['ile'] * kurs
+        portfel[w] -= z['ile']
     print(z, kurs)
+
+print(portfel)
