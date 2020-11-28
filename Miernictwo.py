@@ -97,18 +97,11 @@ class Pole:
         if type( other ) in ( float, int ):
             return Pole( self._wartosc * other, self._jednostka )
         return None
-    #def __str__(self):
-    #    return f"{self._wartosc:.1f} {self._jednostka}"
+    def __str__(self):
+        return f"{self._wartosc:.1f} {self._jednostka}"
     def __repr__(self):
         return f"Pole({repr(self._wartosc)}, {repr(self._jednostka)})"
     def konwertuj_na(self, jednostka):
         return Pole( self._wartosc_w_jednostce(jednostka), jednostka )
     _mnozniki = { 'm2': 1, 'km2' : 1000**2, 'mi2' : 1_609.344**2, 'cm2' : 0.01**2, 'in2' : 0.0254**2, 'mm2' : 0.001**2, 'dm2' : 0.1**2, 'ft2' : 0.3048**2 }
     __rmul__ = __mul__
-
-
-p1 = Pole( "3 m2" )
-p2 = Pole( 4000, "cm2" )
-p3 = p1 + p2
-print(p1,p2,p3)
-print(repr(p3))
