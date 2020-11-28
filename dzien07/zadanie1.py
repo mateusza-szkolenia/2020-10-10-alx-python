@@ -5,8 +5,7 @@ def pobierz_kurs( waluta, data ):
     endDate = data
     startDate = ( datetime.date.fromisoformat(data) - datetime.timedelta(days=7) ).isoformat()
     url = f"http://api.nbp.pl/api/exchangerates/rates/A/{waluta}/{startDate}/{endDate}/"
-    wynik = requests.get( url )
-    return wynik
+    return requests.get( url ).json()['rates'][-1]['mid']
 
 data = "2019-12-26"
 waluta = "EUR"
