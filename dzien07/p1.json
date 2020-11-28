@@ -1,0 +1,8 @@
+{
+  "imie" : "Mateusz",
+  "nazwisko" : "Adamowski",
+  "firma" : "ALX",
+  "szkolenia" : [ "Linux", "Python", "C", "git" ],
+  "xxx" : null,
+  "yyy" : true
+}
