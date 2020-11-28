@@ -4,5 +4,12 @@
     { "data" : "2020-10-07", "akcja" : "sprzedaj", "ile" : 1.00, "waluta" : "EUR" },
     { "data" : "2020-10-08", "akcja" : "kup", "ile" : 100.00, "waluta" : "USD" },
     { "data" : "2020-10-09", "akcja" : "sprzedaj", "ile" : 3.00, "waluta" : "USD" },
-    { "data" : "2020-10-10", "akcja" : "sprzedaj", "ile" : 10.00, "waluta" : "USD" }
+    { "data" : "2020-10-11", "akcja" : "sprzedaj", "ile" : 10.00, "waluta" : "USD" },
+    { "data" : "2020-10-12", "akcja" : "sprzedaj", "ile" : 10.00, "waluta" : "USD" },
+    { "data" : "2020-10-13", "akcja" : "kup", "ile" : 10.00, "waluta" : "GBP" },
+    { "data" : "2020-10-14", "akcja" : "sprzedaj", "ile" : 10.00, "waluta" : "USD" },
+    { "data" : "2020-10-15", "akcja" : "sprzedaj", "ile" : 10.00, "waluta" : "USD" },
+    { "data" : "2020-10-16", "akcja" : "sprzedaj", "ile" : 10.00, "waluta" : "USD" },
+    { "data" : "2020-11-17", "akcja" : "sprzedaj", "ile" : 10.00, "waluta" : "GBP" }
+
 ]
