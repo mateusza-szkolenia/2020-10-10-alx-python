@@ -42,6 +42,15 @@ class Dlugosc:
     def __mul__(self, other):
         if type( other ) in ( float, int ):
             return Dlugosc( self._wartosc * other, self._jednostka )
+        if type( other ) == Dlugosc:
+            return Pole(
+                self._wartosc * (
+                    other.konwertuj_na( self._jednostka )
+                    if self._jednostka != other._jednostka
+                    else other
+                )._wartosc,
+                self._jednostka + '2'
+            )
         return None
     def __str__(self):
         return f"{self._wartosc:.1f} {self._jednostka}"
