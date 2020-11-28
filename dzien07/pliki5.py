@@ -6,11 +6,7 @@ KURSY = {
 }
 
 def przelicz( kwota, waluta_z, waluta_na ):
-    if waluta_na == 'PLN':
-        return kwota * KURSY[waluta_z]
-    if waluta_z == 'PLN':
-        return kwota / KURSY[waluta_na]
-    return None
+    return kwota * KURSY[waluta_z] / KURSY[waluta_na]
 
 with open("dane.txt", "r") as f:
     for linia in f:
