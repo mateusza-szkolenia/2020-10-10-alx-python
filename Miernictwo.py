@@ -98,6 +98,8 @@ class Pole:
             return self._wartosc_w_m2() / other._wartosc_w_m2()
         elif type(other) in (int, float):
             return Pole( self._wartosc / other, self._jednostka )
+        elif type(other) == Dlugosc:
+            return Dlugosc( self._wartosc_w_m2() / other._wartosc_w_m(), 'm' ).konwertuj_na( other._jednostka )
         else:
             return None
     def __sub__(self, other):
@@ -112,5 +114,5 @@ class Pole:
         return f"Pole({repr(self._wartosc)}, {repr(self._jednostka)})"
     def konwertuj_na(self, jednostka):
         return Pole( self._wartosc_w_jednostce(jednostka), jednostka )
-    _mnozniki = { 'm2': 1, 'km2' : 1000**2, 'mi2' : 1_609.344**2, 'cm2' : 0.01**2, 'in2' : 0.0254**2, 'mm2' : 0.001**2, 'dm2' : 0.1**2, 'ft2' : 0.3048**2 }
+    _mnozniki = { 'm2': 1, 'a': 100, 'ha' : 10000, 'km2' : 1000**2, 'mi2' : 1_609.344**2, 'cm2' : 0.01**2, 'in2' : 0.0254**2, 'mm2' : 0.001**2, 'dm2' : 0.1**2, 'ft2' : 0.3048**2 }
     __rmul__ = __mul__
