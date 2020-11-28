@@ -5,13 +5,6 @@ def podaj_kurs( waluta ):
     kursy = json.load(open("kursy.json"))
     return kursy[waluta]
 
-def podaj_kursxxxx( waluta ):
-    with open("kursy.txt","r") as f:
-        for linia in f:
-            w, k = linia.split(":")
-            if w == waluta:
-                return float(k)
-
 def przelicz( kwota, waluta_z, waluta_na ):
     return kwota * podaj_kurs(waluta_z) / podaj_kurs(waluta_na)
 
