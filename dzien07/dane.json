@@ -1,0 +1,4 @@
+[
+    {"kwota" : 10, "waluta-z" : "EUR", "waluta-na" : "GBP"},
+    {"kwota" : 100, "waluta-z" : "PLN", "waluta-na" : "USD"}
+]

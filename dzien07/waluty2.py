@@ -1,6 +1,11 @@
+import json
 # PRZEROBIC z obslugi pliku txt na JSON
 
 def podaj_kurs( waluta ):
+    kursy = json.load(open("kursy.json"))
+    return kursy[waluta]
+
+def podaj_kursxxxx( waluta ):
     with open("kursy.txt","r") as f:
         for linia in f:
             w, k = linia.split(":")
