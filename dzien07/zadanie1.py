@@ -1,5 +1,6 @@
 import requests
 import datetime
+import json
 
 def pobierz_kurs( waluta, data ):
     endDate = data
@@ -7,10 +8,7 @@ def pobierz_kurs( waluta, data ):
     url = f"http://api.nbp.pl/api/exchangerates/rates/A/{waluta}/{startDate}/{endDate}/"
     return requests.get( url ).json()['rates'][-1]['mid']
 
-data = "2019-12-26"
-waluta = "EUR"
+zlecenia = json.load( open("zlecenia.json") )
 
-# chcialbym miec funkcje, ktora pobierze kurs obowiazujacy danego dnia:
-# (czyli z tego dnia, lub jesli to swieto to z ostatniego roboczego)
-kurs = pobierz_kurs( waluta, data )
-print(kurs) # tutaj chcemy dostac liczbe float
+for z in zlecenia:
+    print(z)
