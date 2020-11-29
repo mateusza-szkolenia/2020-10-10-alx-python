@@ -22,6 +22,8 @@
 
 class Employee:
     def __init__(self, imie, nazwisko, stawka ):
-        pass
+        self._imie = imie
+        self._nazwisko = nazwisko
+        self._stawka = stawka
 
 employee = Employee('Jan', 'Nowak', 100.0)
