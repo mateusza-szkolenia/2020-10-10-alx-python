@@ -27,7 +27,11 @@ class Employee:
         self._stawka = stawka
         self._ile_zarobil = 0.0
     def register_time(self, time_h):
-        self._ile_zarobil += self._stawka * time_h
+        if time_h > 8:
+            self._ile_zarobil += self._stawka * 8
+            self._ile_zarobil += 2 * self._stawka * ( time_h - 8 )
+        else:
+            self._ile_zarobil += 2 * self._stawka * (time_h - 8)
     def pay_salary(self):
         wyplata = self._ile_zarobil
         self._ile_zarobil = 0
