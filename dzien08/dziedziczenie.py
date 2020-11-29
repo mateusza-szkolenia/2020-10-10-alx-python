@@ -36,7 +36,6 @@ class Pracownik(Czlowiek):
         return 2000 + self._wynagrodzenie * 1.5
     kim_jestem = "pracownikiem"
     _wynagrodzenie = 0
-    _koszt_calkowity2 = 2000
 
 class Menedzer(Pracownik):
     def dodaj_pracownika(self, pracownik ):
