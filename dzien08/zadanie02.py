@@ -25,5 +25,11 @@ class Employee:
         self._imie = imie
         self._nazwisko = nazwisko
         self._stawka = stawka
+        self._ile_zarobil = 0.0
+    def register_time(self, time_h):
+        self._ile_zarobil += self._stawka * time_h
 
 employee = Employee('Jan', 'Nowak', 100.0)
+employee.register_time(5)
+
+print(employee._ile_zarobil)
