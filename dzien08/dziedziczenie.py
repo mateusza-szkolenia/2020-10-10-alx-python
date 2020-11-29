@@ -1,3 +1,5 @@
+import random
+
 class Firma:
     def __init__(self, nazwa ):
         self._nazwa = nazwa
@@ -15,7 +17,10 @@ class Czlowiek:
     def __init__(self, imie, nazwisko ):
         self._imie = imie
         self._nazwisko = nazwisko
-
+        #self._licznik = random.randint(100,200)
+        Czlowiek._licznik += 1
+    def __del__(self):
+        print("Zegnajcie")
     @property
     def imie_i_nazwisko(self):
         return f"{self._imie} {self._nazwisko}"
@@ -23,8 +28,10 @@ class Czlowiek:
     def przedstaw_sie(self):
         print(f"Jestem {self.kim_jestem} o imieniu {self.imie_i_nazwisko}")
     kim_jestem = "czlowiekiem"
+    _licznik = 0
 
 class Pracownik(Czlowiek):
+
     def pracuj(self):
         print(f"Pracuje... (powiedzial {self.imie_i_nazwisko})")
     def ustal_wynagrodzenie(self, wynagrodzenie):
@@ -38,7 +45,7 @@ class Pracownik(Czlowiek):
     def ustaw_firme(self, firma ):
         self._firma = firma
     def ustaw_szefa(self, szef):
-        if type(szef) == Menedzer:
+        if type(szef) == Menedzer or szef == None:
             self._szef = szef
     kim_jestem = "pracownikiem"
     _wynagrodzenie = 0
@@ -53,6 +60,11 @@ class Menedzer(Pracownik):
         pracownik.ustaw_firme(self._firma)
         pracownik.ustaw_szefa(self)
         self._pracownicy.append( pracownik )
+    def usun_pracownika(self, pracownik ):
+        pracownik.ustaw_firme( None )
+        pracownik.ustaw_szefa( None )
+        self._pracownicy.remove( pracownik )
+
     def przedstaw_pracownikow(self):
         for p in self._pracownicy:
             p.przedstaw_sie()
@@ -75,21 +87,28 @@ class Menedzer(Pracownik):
 
 f = Firma("ABCXYZ")
 m = Menedzer("Piotr", "S")
-p1 = Pracownik("Zygfryd", "Z")
-p2 = Pracownik("Zygmunt", "N")
-c1 = Czlowiek("Jan","X")
-c2 = Czlowiek("Roman", "Z")
 
-f.ustaw_szefa(m)
-m.dodaj_pracownika( p1 )
-m.dodaj_pracownika( p2 )
-
+f.ustaw_szefa( m )
+m.dodaj_pracownika( Pracownik("Zygfryd", "Z") )
+m.dodaj_pracownika( Pracownik("Zygmunt", "N") )
+m.dodaj_pracownika( Pracownik("Alfred", "Z") )
+m.dodaj_pracownika( Pracownik("Benedykt", "Z") )
+m.dodaj_pracownika( Pracownik("Cezary", "Z") )
+m.usun_pracownika( m._pracownicy[0] )
+m.usun_pracownika( m._pracownicy[1] )
+m.usun_pracownika( m._pracownicy[1] )
 
 m.ustal_wynagrodzenie(9000)
 m.ustaw_wynagrodzenie_zespolu(4000)
 
-f.przedstaw_firme()
+#f.przedstaw_firme()
 
+p = Pracownik("Xawery","ABC")
+
+del m
+del f
+
+print(Czlowiek._licznik)
 
 # to jest klasa <class '__main__.Czlowiek'>
 #print( Czlowiek )
