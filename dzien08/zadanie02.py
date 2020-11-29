@@ -28,8 +28,19 @@ class Employee:
         self._ile_zarobil = 0.0
     def register_time(self, time_h):
         self._ile_zarobil += self._stawka * time_h
+    def pay_salary(self):
+        wyplata = self._ile_zarobil
+        self._ile_zarobil = 0
+        return wyplata
 
 employee = Employee('Jan', 'Nowak', 100.0)
 employee.register_time(5)
-
-print(employee._ile_zarobil)
+x = employee.pay_salary()
+print(x)
+x = employee.pay_salary()
+print(x)
+x = employee.pay_salary()
+print(x)
+employee.register_time(10)
+x = employee.pay_salary()
+print(x)
