@@ -8,7 +8,7 @@ class Firma:
     def ustaw_szefa(self, szef):
         if type(szef) == Menedzer:
             self._szef = szef
-            szef._firma = self
+            szef.ustaw_firme( self )
     _szef = None
 
 class Czlowiek:
@@ -31,18 +31,27 @@ class Pracownik(Czlowiek):
         self._wynagrodzenie = wynagrodzenie
     def przedstaw_sie(self):
         super().przedstaw_sie()
-        print(f"Zarabiam: {self._wynagrodzenie}")
+        print(f"Pracuje w firmie: {self._firma._nazwa}, zarabiam: {self._wynagrodzenie}, moj szef to: {self._szef.imie_i_nazwisko if self._szef != None else '---' }")
     @property
     def koszt_calkowity(self):
         return 2000 + self._wynagrodzenie * 1.5
+    def ustaw_firme(self, firma ):
+        self._firma = firma
+    def ustaw_szefa(self, szef):
+        if type(szef) == Menedzer:
+            self._szef = szef
     kim_jestem = "pracownikiem"
     _wynagrodzenie = 0
+    _firma = None
+    _szef = None
 
 class Menedzer(Pracownik):
     def dodaj_pracownika(self, pracownik ):
         if type(pracownik) != Pracownik:
             print(f"Nie mozna dodac {pracownik} jako pracownika")
             return
+        pracownik.ustaw_firme(self._firma)
+        pracownik.ustaw_szefa(self)
         self._pracownicy.append( pracownik )
     def przedstaw_pracownikow(self):
         for p in self._pracownicy:
@@ -63,7 +72,6 @@ class Menedzer(Pracownik):
     kim_jestem = "menedzerem"
     _pracownicy = []
     _budzet_integracyjny = 3000
-    _firma = None
 
 f = Firma("ABCXYZ")
 m = Menedzer("Piotr", "S")
@@ -72,9 +80,10 @@ p2 = Pracownik("Zygmunt", "N")
 c1 = Czlowiek("Jan","X")
 c2 = Czlowiek("Roman", "Z")
 
+f.ustaw_szefa(m)
 m.dodaj_pracownika( p1 )
 m.dodaj_pracownika( p2 )
-f.ustaw_szefa(m)
+
 
 m.ustal_wynagrodzenie(9000)
 m.ustaw_wynagrodzenie_zespolu(4000)
