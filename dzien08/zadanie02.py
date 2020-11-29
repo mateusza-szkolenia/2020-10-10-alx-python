@@ -19,3 +19,9 @@
 # >>> employee.register_time(5)
 # >>> employee.pay_salary()
 # 2000.0
+
+class Employee:
+    def __init__(self, imie, nazwisko, stawka ):
+        pass
+
+employee = Employee('Jan', 'Nowak', 100.0)
