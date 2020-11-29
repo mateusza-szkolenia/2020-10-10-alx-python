@@ -38,7 +38,7 @@ class Pracownik(Czlowiek):
         self._wynagrodzenie = wynagrodzenie
     def przedstaw_sie(self):
         super().przedstaw_sie()
-        print(f"Pracuje w firmie: {self._firma._nazwa}, zarabiam: {self._wynagrodzenie}, moj szef to: {self._szef.imie_i_nazwisko if self._szef != None else '---' }")
+        print(f"Pracuje w firmie: {self._firma._nazwa if self._firma != None else '---'}, zarabiam: {self._wynagrodzenie}, moj szef to: {self._szef.imie_i_nazwisko if self._szef != None else '---' }")
     @property
     def koszt_calkowity(self):
         return 2000 + self._wynagrodzenie * 1.5
@@ -85,43 +85,34 @@ class Menedzer(Pracownik):
     _pracownicy = []
     _budzet_integracyjny = 3000
 
-f = Firma("ABCXYZ")
-m = Menedzer("Piotr", "S")
+def wyn( prac ):
+    return prac._wynagrodzenie
+def imie( prac ):
+    return len(prac._imie)
 
-f.ustaw_szefa( m )
-m.dodaj_pracownika( Pracownik("Zygfryd", "Z") )
-m.dodaj_pracownika( Pracownik("Zygmunt", "N") )
-m.dodaj_pracownika( Pracownik("Alfred", "Z") )
-m.dodaj_pracownika( Pracownik("Benedykt", "Z") )
-m.dodaj_pracownika( Pracownik("Cezary", "Z") )
-m.usun_pracownika( m._pracownicy[0] )
-m.usun_pracownika( m._pracownicy[1] )
-m.usun_pracownika( m._pracownicy[1] )
+p1 = Pracownik("Alicja", "XXX")
+p1.ustal_wynagrodzenie(4000)
+p2 = Pracownik("Basia", "K")
+p2.ustal_wynagrodzenie(3500)
+p3 = Pracownik("Katarzyna", "Z")
+p3.ustal_wynagrodzenie(9000)
+p4 = Pracownik("Celina", "A")
+p4.ustal_wynagrodzenie(4100)
 
-m.ustal_wynagrodzenie(9000)
-m.ustaw_wynagrodzenie_zespolu(4000)
+pracownice = [p1,p2,p3,p4]
 
-#f.przedstaw_firme()
+def funkcja_pomocnicza( prac ):
+    return ( len(prac._nazwisko), prac._nazwisko)
 
-p = Pracownik("Xawery","ABC")
+# bez uzycia lambdy:
+# pracownice.sort(key=funkcja_pomocnicza)
 
-del m
-del f
+# z uzyciem lambdy, ale w zmiennej
+funkcja_pomocnicza2 = lambda prac : ( len(prac._nazwisko), prac._nazwisko)
+pracownice.sort(key=funkcja_pomocnicza2)
 
-print(Czlowiek._licznik)
+pracownice.sort(key=lambda prac : ( len(prac._nazwisko), prac._nazwisko)  )
 
-# to jest klasa <class '__main__.Czlowiek'>
-#print( Czlowiek )
-
-# to jest obiekt klasy Czlowiek <__main__.Czlowiek object at 0x00000000021E6308>
-#print( c1 )
-
-# to rowniez jest klasa Czlowiek (jak wyzej) <class '__main__.Czlowiek'>
-#print( type(c1) )
-
-# to jest metoda konkretnego obiektu
-#print( c1.przedstaw_sie )
-
-# to jest po prostu funkcja, oderwana od jakiegokolwiek obiektu
-#print( Czlowiek.przedstaw_sie )
+for p in pracownice:
+    p.przedstaw_sie()
 
