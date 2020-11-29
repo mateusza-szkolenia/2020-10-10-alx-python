@@ -8,6 +8,7 @@ class Firma:
     def ustaw_szefa(self, szef):
         if type(szef) == Menedzer:
             self._szef = szef
+            szef._firma = self
     _szef = None
 
 class Czlowiek:
@@ -49,7 +50,7 @@ class Menedzer(Pracownik):
     def przedstaw_sie(self):
         super().przedstaw_sie()
         #Czlowiek.przedstaw_sie(self)
-        print("Oto moj zespol:")
+        print(f"Oto moj zespol w firmie {self._firma._nazwa}:")
         self.przedstaw_pracownikow()
         print("---KONIEC---")
     def ustaw_wynagrodzenie_zespolu(self, wynagrodzenie):
@@ -62,8 +63,9 @@ class Menedzer(Pracownik):
     kim_jestem = "menedzerem"
     _pracownicy = []
     _budzet_integracyjny = 3000
+    _firma = None
 
-
+f = Firma("ABCXYZ")
 m = Menedzer("Piotr", "S")
 p1 = Pracownik("Zygfryd", "Z")
 p2 = Pracownik("Zygmunt", "N")
@@ -72,24 +74,12 @@ c2 = Czlowiek("Roman", "Z")
 
 m.dodaj_pracownika( p1 )
 m.dodaj_pracownika( p2 )
-#m.dodaj_pracownika( c1 )
+f.ustaw_szefa(m)
 
-#ludzie = [ m, p1, p2, c1, c2 ]
-
-#for ktos in ludzie:
-#    ktos.przedstaw_sie()
-#    if type(ktos) == Pracownik:
-#        ktos.pracuj()
-
-#m.przedstaw_sie()
 m.ustal_wynagrodzenie(9000)
 m.ustaw_wynagrodzenie_zespolu(4000)
 
-print(p1._wynagrodzenie)
-print(p1.koszt_calkowity)
-print(m.koszt_calkowity)
-p1.ustal_wynagrodzenie(9000)
-print(m.koszt_calkowity)
+f.przedstaw_firme()
 
 
 # to jest klasa <class '__main__.Czlowiek'>
