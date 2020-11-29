@@ -26,6 +26,7 @@ class Menedzer(Pracownik):
         for p in self._pracownicy:
             p.przedstaw_sie()
     def przedstaw_sie(self):
+        Czlowiek.przedstaw_sie(self)
         print("Oto moj zespol:")
         self.przedstaw_pracownikow()
         print("---KONIEC---")
@@ -50,7 +51,7 @@ ludzie = [ m, p1, p2, c1, c2 ]
 #    if type(ktos) == Pracownik:
 #        ktos.pracuj()
 
-#m.przedstaw_sie()
+m.przedstaw_sie()
 
 # to jest klasa <class '__main__.Czlowiek'>
 print( Czlowiek )
@@ -66,5 +67,4 @@ print( c1.przedstaw_sie )
 
 # to jest po prostu funkcja, oderwana od jakiegokolwiek obiektu
 print( Czlowiek.przedstaw_sie )
-
 
