@@ -10,7 +10,7 @@ class Produkt():
     def __str__(self):
         return f'Produkt: {self._nazwa}, id: {self._id}, cena {self._cena} PLN'
 
-produkty = Produkt(1, 'Chleb', 2.99)
+produkt1 = Produkt(1, 'Chleb', 2.99)
 produkt2 = Produkt(2, 'Mleko', 1.99)
 produkt3 = Produkt(3, 'Parówki', 4.99)
 
